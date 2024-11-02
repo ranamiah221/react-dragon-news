@@ -11,16 +11,16 @@ const Home = () => {
             </div>
             {/* sideNavbar and component*/}
             <div className="grid grid-cols-4 gap-3">
-                <div className="col-span-1 border-2">
+                <div className="col-span-1 ">
                 <LeftSideNav></LeftSideNav>
                 
                 </div>
 
-                <div className="col-span-2 border-2">
+                <div className="col-span-2">
                    <Contents></Contents>
                 </div>
 
-                <div className="col-span-1 border-2">
+                <div className="col-span-1 ">
                 <RightSideNav></RightSideNav>
                 </div>
             </div>
