@@ -14,10 +14,10 @@ const Header = () => {
         <p>{moment().format("dddd, MMMM Do YYYY")}</p>
       </div>
       {/* Breaking News */}
-      <div className="w-3/4 mx-auto flex bg-slate-200">
+      <div className="w-3/4 mx-auto flex bg-slate-200 rounded-lg">
         <button className="text-base font-medium text-white bg-red-500 px-3 py-1 rounded-lg">Latest</button>
       
-        <Marquee pauseOnHover={true} speed={100}>
+        <Marquee pauseOnHover={true} speed={50}>
             <Link className='mr-8' to='/'>
             Match Highlights: Germany vs Spain — as it happened   !   Match Highlights: Germany vs Spain as...
             </Link>

@@ -9,7 +9,7 @@ const Navbar = () => {
 
         </div>
       <div className="navbar-center">
-        <ul className="flex gap-5 text-base font-medium ">
+        <ul className="flex gap-5 text-base font-normal text-[#706F6F]">
           <li>
             <NavLink>Home</NavLink>
           </li>
