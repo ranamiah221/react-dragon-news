@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import defaultUser from '../../assets/user.png'
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 flex">
+    <div className="flex justify-between items-center">
+      <div></div>
       <div className="">
          <ul className="flex gap-5">
             <li><NavLink>Home</NavLink></li>
@@ -11,9 +13,9 @@ const Navbar = () => {
             <li><NavLink>Career</NavLink></li>
          </ul>
       </div>
-      <div className="">
-         <img src="" alt="" />
-         <button className="btn">Login</button>
+      <div className="flex items-center gap-3">
+         <img className="h-10 w-10 rounded-full" src={defaultUser} alt="" />
+         <button className="btn bg-black text-white px-10 rounded-md">Login</button>
       </div>
     </div>
   );
