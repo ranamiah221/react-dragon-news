@@ -1,4 +1,5 @@
 import Contents from "../../Components/Contents/Contents";
+import Header from "../../Components/Shared/Header/Header";
 import LeftSideNav from "../../Components/Shared/LeftSideNav";
 import Navbar from "../../Components/Shared/Navbar";
 import RightSideNav from "../../Components/Shared/RightSideNav";
@@ -6,6 +7,7 @@ import RightSideNav from "../../Components/Shared/RightSideNav";
 const Home = () => {
     return (
         <div>
+            <Header></Header>
             <div>
                 <Navbar></Navbar>
             </div>
