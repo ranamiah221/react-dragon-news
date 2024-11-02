@@ -12,7 +12,7 @@ const Login = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="hero bg-base-200 min-h-screen ">
+      <div className="hero bg-base-200 min-h-screen mt-10">
        <div className="hero-content border-2 w-3/4 mx-auto bg-white">
             <form onSubmit={handleLogin} className="card-body">
                 <h1 className="border-b-2 pb-8 text-center  text-xl font-bold">Login Your Account</h1>
