@@ -7,7 +7,7 @@ import playground from '../../assets/playground.png';
 
 const RightSideNav = () => {
     return (
-        <div className='p-4'>
+        <div className='p-2'>
             <SectionTitle title='Login With'></SectionTitle>
             <div className='flex items-center justify-center gap-2 hover:text-blue-500
              hover:border-blue-500 border px-auto rounded mb-2'>

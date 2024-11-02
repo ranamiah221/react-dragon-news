@@ -10,7 +10,7 @@ const Home = () => {
                 <Navbar></Navbar>
             </div>
             {/* sideNavbar and component*/}
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-4 gap-3">
                 <div className="col-span-1 border-2">
                 <LeftSideNav></LeftSideNav>
                 
