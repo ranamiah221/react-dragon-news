@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Shared/Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { IoMdEyeOff } from "react-icons/io";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 
 const Login = () => {
     const [isShow, setIsShow]=useState(false);
-  
+    const{signIn}=useContext(AuthContext);
     const handleLogin=(e)=>{
         e.preventDefault();
-        console.log('login checked');
+        const form= new FormData(e.currentTarget)
+        const email=form.get('email')
+        const password=form.get('password')
+        signIn(email, password)
+        .then(result=>{
+          console.log(result.user)
+        })
+        .catch(error=>{
+          console.log(error.message)
+        })
 }
   return (
     <div>
