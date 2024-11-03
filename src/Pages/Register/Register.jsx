@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Shared/Navbar";
 import { IoMdEyeOff } from "react-icons/io";
 import { FaEye } from "react-icons/fa6";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const Register = () => {
   const [isShow, setIsShow] = useState(false);
+  const {createUser}=useContext(AuthContext);
+ 
   const handleRegister = (e) => {
     e.preventDefault();
+    const form= new FormData(e.currentTarget)
+    const email= form.get('email')
+    const password= form.get('password')
+    createUser(email, password)
+    .then(result=>{
+      console.log(result.user)
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+    
+    
   };
   return (
     <div className="">
@@ -88,15 +103,16 @@ const Register = () => {
            <p>Accept terms and condition</p>
            </div>
             <div className="form-control mt-6">
-              <input type="submit" className="btn bg-black text-white">Register</input>
+              <button type="submit"  className="btn bg-black text-white">Register</button>
             </div>
             <p className="text-center text-sm font-normal">
               Already Have An Account ?
-              <Link to="/login">
-                <span className="text-amber-400"> Login </span>
+              <Link className="text-amber-400" to="/login">
+                 Login 
               </Link>
             </p>
           </form>
+         
         </div>
       </div>
     </div>

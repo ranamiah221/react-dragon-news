@@ -8,6 +8,8 @@ import AuthProvider from './Components/Provider/AuthProvider'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <AuthProvider><RouterProvider router={PublicRoute}></RouterProvider></AuthProvider>
+   <AuthProvider>
+         <RouterProvider router={PublicRoute}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )
