@@ -4,6 +4,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
 import NewsDetails from "../../Pages/NewDetails/NewsDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const PublicRoute = createBrowserRouter([
@@ -25,7 +26,7 @@ const PublicRoute = createBrowserRouter([
         },
         {
             path:'/news/:id',
-            element:<NewsDetails></NewsDetails>,
+            element:<PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
             loader:({params})=>fetch('/public/news.json')
         }
         
