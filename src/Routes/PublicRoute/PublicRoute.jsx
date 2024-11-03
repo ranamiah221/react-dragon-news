@@ -3,6 +3,7 @@ import Root from "../../Layout/Root";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import NewsDetails from "../../Pages/NewDetails/NewsDetails";
 
 
 const PublicRoute = createBrowserRouter([
@@ -22,6 +23,11 @@ const PublicRoute = createBrowserRouter([
             path:'/register',
             element:<Register></Register>
         },
+        {
+            path:'/news/:id',
+            element:<NewsDetails></NewsDetails>,
+            loader:({params})=>fetch('/public/news.json')
+        }
         
     ]
    }

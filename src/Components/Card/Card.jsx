@@ -3,9 +3,10 @@ import AuthorInfo from "../AuthorInfo/AuthorInfo";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { IoEyeSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Card = ({ card }) => {
-  const { author, rating, details, image_url, title, total_view } = card;
+  const { author, rating, details, image_url, title, total_view, _id } = card;
   return (
     <div className="mb-4 border-2 rounded-lg">
       <AuthorInfo author={author}></AuthorInfo>
@@ -17,13 +18,13 @@ const Card = ({ card }) => {
              pb-5 text-[#706F6F]"
         >
           {details.slice(0, 220)}
-          <span
+          <Link to={`/news/${_id}`} 
             className="text-amber-400
               font-semibold"
           >
             {" "}
             Read More ....
-          </span>
+          </Link>
         </p>
 
         <div className="flex justify-between items-center pb-5">

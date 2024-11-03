@@ -1,4 +1,5 @@
 import Contents from "../../Components/Contents/Contents";
+import Marque from "../../Components/Marque/Marque";
 import Header from "../../Components/Shared/Header/Header";
 import LeftSideNav from "../../Components/Shared/LeftSideNav";
 import Navbar from "../../Components/Shared/Navbar";
@@ -8,6 +9,7 @@ const Home = () => {
     return (
         <div>
             <Header></Header>
+           <Marque></Marque> 
             <div>
                 <Navbar></Navbar>
             </div>
