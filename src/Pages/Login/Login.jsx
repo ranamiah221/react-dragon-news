@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Shared/Navbar";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { IoMdEyeOff } from "react-icons/io";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const Login = () => {
     const [isShow, setIsShow]=useState(false);
+  
     const handleLogin=(e)=>{
         e.preventDefault();
+        
 }
   return (
     <div>
@@ -50,10 +53,11 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-black text-white">Login</button>
+                <input type="submit" className="btn bg-black text-white">Login</input>
               </div>
-              <p className="text-center text-sm font-normal">Don't Have An Account ? <Link to='/register'><span className="text-amber-400">Register </span></Link></p>
+              
             </form>
+            <p className="text-center text-sm font-normal">Don't Have An Account ? <Link className="text-amber-400" to='/register'> Register </Link></p>
           
         </div>
       </div>

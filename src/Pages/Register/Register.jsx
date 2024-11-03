@@ -82,8 +82,13 @@ const Register = () => {
               </span>
               
             </div>
+            {/* terms and condition */}
+           <div className="flex items-center gap-2">
+           <input type="checkbox"  className="checkbox" />
+           <p>Accept terms and condition</p>
+           </div>
             <div className="form-control mt-6">
-              <button className="btn bg-black text-white">Register</button>
+              <input type="submit" className="btn bg-black text-white">Register</input>
             </div>
             <p className="text-center text-sm font-normal">
               Already Have An Account ?

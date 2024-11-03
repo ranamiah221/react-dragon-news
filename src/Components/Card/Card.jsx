@@ -6,7 +6,6 @@ import { IoEyeSharp } from "react-icons/io5";
 
 const Card = ({ card }) => {
   const { author, rating, details, image_url, title, total_view } = card;
-  console.log(rating)
   return (
     <div className="mb-4 border-2 rounded-lg">
       <AuthorInfo author={author}></AuthorInfo>
