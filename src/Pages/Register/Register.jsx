@@ -4,19 +4,42 @@ import Navbar from "../../Components/Shared/Navbar";
 import { IoMdEyeOff } from "react-icons/io";
 import { FaEye } from "react-icons/fa6";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [isShow, setIsShow] = useState(false);
-  const {createUser}=useContext(AuthContext);
+  const {createUser,updateUser}=useContext(AuthContext);
  
   const handleRegister = (e) => {
     e.preventDefault();
     const form= new FormData(e.currentTarget)
     const email= form.get('email')
     const password= form.get('password')
+    const name= form.get('name')
+    const photo= form.get('photo')
     createUser(email, password)
-    .then(result=>{
-      console.log(result.user)
+    .then(()=>{
+        updateUser(name, photo)
+        .then(()=>{
+          
+          Swal.fire({
+            title: `user login successful.`,
+            showClass: {
+              popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+              popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+          });
+        })
     })
     .catch(error=>{
       console.log(error.message)
@@ -55,7 +78,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="photo_url"
+                name="photo"
                 placeholder="Enter Your Photo Url"
                 className="input input-bordered bg-[#F3F3F3]"
                 required

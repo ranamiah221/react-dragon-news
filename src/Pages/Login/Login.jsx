@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { IoMdEyeOff } from "react-icons/io";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -19,10 +20,25 @@ const Login = () => {
         const password=form.get('password')
         signIn(email, password)
         .then(result=>{
-          console.log(result.user)
-         
             navigate(location?.state ? location.state : '/')
-          
+            Swal.fire({
+              title: `${result.user.email} login successful.`,
+              showClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeInUp
+                  animate__faster
+                `
+              },
+              hideClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeOutDown
+                  animate__faster
+                `
+              }
+            });
+            
         })
         .catch(error=>{
           console.log(error.message)
